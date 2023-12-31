@@ -45,4 +45,30 @@
   border: none;
   border-radius: 5px;
   width: max-content;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1288px) {
+  .title {
+    font-size: 72px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 64px;
+  }
+  .imageContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 36px;
+  }
 }
