@@ -3,6 +3,9 @@
 import Image from 'next/image';
 import styles from './writePage.module.css';
 import { useState } from 'react';
+import { FaImage, FaMinus, FaPlus } from 'react-icons/fa';
+import { GoVideo } from 'react-icons/go';
+import { MdDriveFolderUpload } from 'react-icons/md';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -14,18 +17,18 @@ const WritePage = () => {
       <input type="text" placeholder="Title" className={styles.input} />
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
+          {open ? <FaMinus className={styles.svgButton} /> : <FaPlus className={styles.svgButton} />}
         </button>
         {open && (
           <div className={styles.add}>
             <button className={styles.addButton}>
-              <Image src="/image.png" alt="" width={16} height={16} />
+              <FaImage className={styles.svgButton} />
             </button>
             <button className={styles.addButton}>
-              <Image src="/external.png" alt="" width={16} height={16} />
+              <MdDriveFolderUpload className={styles.svgButton} />
             </button>
             <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
+              <GoVideo className={styles.svgButton} />
             </button>
           </div>
         )}
