@@ -3,9 +3,9 @@ import styles from './card.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Card = () => {
+const Card = ({ key, item }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} key={key}>
       <div className={styles.imageContainer}>
         <Image src="/p1.jpeg" alt="" fill className={styles.image} />{' '}
       </div>
@@ -15,7 +15,7 @@ const Card = () => {
           <span className={styles.category}>CULTURE</span>
         </div>{' '}
         <Link href="/">
-          <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+          <h1>{item.title}</h1>
         </Link>
         <p className={styles.desc}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         <Link href="/" className={styles.link}>

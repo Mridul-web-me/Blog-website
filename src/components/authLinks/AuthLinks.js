@@ -9,10 +9,10 @@ import { useRouter } from 'next/navigation';
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  const { data, status } = useSession();
+  const { status } = useSession();
 
   const handleSignOut = () => {
-    signOut;
+    signOut();
     router.push('/');
   };
   return (

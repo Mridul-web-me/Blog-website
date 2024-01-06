@@ -8,10 +8,22 @@ import { GoVideo } from 'react-icons/go';
 import { MdDriveFolderUpload } from 'react-icons/md';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 const WritePage = () => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('');
+
+  const { data, status } = useSession();
+  console.log(data, status);
+  const router = useRouter();
+  if (status === 'loading') {
+    return <div className={styles.loading}>Loadong.....</div>;
+  }
+  if (status === 'authenticated') {
+    router.push('/');
+  }
   return (
     <div className={styles.container}>
       <input type="text" placeholder="Title" className={styles.input} />
