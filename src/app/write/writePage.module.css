@@ -39,6 +39,7 @@
   outline: none; */
   background-color: transparent;
   width: 100%;
+  color: var(--textColor);
 }
 
 .input::placeholder {
@@ -61,4 +62,9 @@
 
 .svgButton {
   color: var(--textColor);
+}
+
+.progressBar {
+  width: 24px;
+  margin-right: 15px;
 }
